@@ -1,32 +1,39 @@
 package com.drug.dispose.util;
 
+import java.util.Objects;
+
 import org.springframework.stereotype.Component;
 
-import com.drug.dispose.dto.UserDTO;
+import com.drug.dispose.dto.User;
 
 @Component
 public class UserValidation {
 
-	public boolean userNullCheck(UserDTO user) {
+	public static boolean allMandatoryFieldsPresent(final User user) {
 
-		try {
-			System.out.println("UserValidation :: In try block");
-
-			if (user.getAadharNo() == null || user.getCurrentLocation() == null || user.getEmail() == null
-					|| user.getName() == null || user.getPrimaryPhone() == null || user.getDateOfBirth() == null) {
-				System.out.println("UserValidation :: null check for field");
-				return false;
-
-			}
-			System.out.println("UserValidation :: All fields are non null");
-			System.out.println("UserValidation :: " + user);
-			return true;
-
-		} catch (Exception e) {
-			System.out.println("UserValidation :: Exception occured");
-			throw new RuntimeException("Enter all the fields");
+		if(Objects.isNull(user.getName())) {
+			return false;
 		}
-
+		if(Objects.isNull(user.getPrimaryPhone())) {
+			return false;
+		}
+		if(Objects.isNull(user.getEmail())) {
+			return false;
+		}
+		if(Objects.isNull(user.getCity())) {
+			return false;
+		}
+		if(Objects.isNull(user.getCountry())) {
+			return false;
+		}
+		if(Objects.isNull(user.getCurrentAddress())) {
+			return false;
+		}
+		if(Objects.isNull(user.getState())) {
+			return false;
+		}
+		return true;
+		
 	}
 
 }

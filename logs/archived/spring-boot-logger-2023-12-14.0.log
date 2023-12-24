@@ -1,0 +1,70 @@
+2023-12-14 20:01:10,328 INFO org.springframework.boot.StartupInfoLogger [main] Starting DrugDisposeSystemApplication using Java 17.0.6 on EPINBANW00B3 with PID 31688 (C:\Users\Abhishek_Singh6\OneDrive - EPAM\Desktop\ABHI\Practice\Drug_Dispose_System\target\classes started by Abhishek_Singh6 in C:\Users\Abhishek_Singh6\OneDrive - EPAM\Desktop\ABHI\Practice\Drug_Dispose_System)
+2023-12-14 20:01:10,339 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-12-14 20:01:11,436 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14 20:01:11,526 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interfaces.
+2023-12-14 20:01:12,354 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9015 (http)
+2023-12-14 20:01:12,379 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:01:12,381 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-12-14 20:01:12,381 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-12-14 20:01:12,571 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-12-14 20:01:12,571 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2152 ms
+2023-12-14 20:01:12,959 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14 20:01:13,046 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-12-14 20:01:13,404 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-14 20:01:13,649 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-12-14 20:01:14,276 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-12-14 20:01:14,309 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-12-14 20:01:15,509 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-14 20:01:15,526 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14 20:01:15,989 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14 20:01:16,905 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-14 20:01:16,938 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:01:16,970 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9015 (http) with context path ''
+2023-12-14 20:01:16,986 INFO org.springframework.boot.StartupInfoLogger [main] Started DrugDisposeSystemApplication in 7.189 seconds (JVM running for 8.329)
+2023-12-14 20:01:18,294 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(11)-127.0.0.1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14 20:01:18,295 INFO org.springframework.web.servlet.FrameworkServlet [RMI TCP Connection(11)-127.0.0.1] Initializing Servlet 'dispatcherServlet'
+2023-12-14 20:01:18,297 INFO org.springframework.web.servlet.FrameworkServlet [RMI TCP Connection(11)-127.0.0.1] Completed initialization in 2 ms
+2023-12-14 20:01:27,020 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(7)-127.0.0.1] Application shutdown requested.
+2023-12-14 20:01:27,049 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(7)-127.0.0.1] Pausing ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:01:27,050 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(7)-127.0.0.1] Stopping service [Tomcat]
+2023-12-14 20:01:27,054 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(7)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-12-14 20:01:27,059 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(7)-127.0.0.1] Stopping ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:01:27,063 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(7)-127.0.0.1] Destroying ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:01:27,068 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(7)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14 20:01:27,073 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(7)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-12-14 20:01:27,084 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(7)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2023-12-14 20:40:52,571 INFO org.springframework.boot.StartupInfoLogger [main] Starting DrugDisposeSystemApplication using Java 17.0.6 on EPINBANW00B3 with PID 30092 (C:\Users\Abhishek_Singh6\OneDrive - EPAM\Desktop\ABHI\Practice\Drug_Dispose_System\target\classes started by Abhishek_Singh6 in C:\Users\Abhishek_Singh6\OneDrive - EPAM\Desktop\ABHI\Practice\Drug_Dispose_System)
+2023-12-14 20:40:52,575 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-12-14 20:40:54,035 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-14 20:40:54,140 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interfaces.
+2023-12-14 20:40:55,327 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9015 (http)
+2023-12-14 20:40:55,339 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:40:55,340 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-12-14 20:40:55,342 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-12-14 20:40:55,541 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-12-14 20:40:55,541 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2898 ms
+2023-12-14 20:40:56,129 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-14 20:40:56,217 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-12-14 20:40:56,572 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-14 20:40:56,725 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-12-14 20:40:57,388 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-12-14 20:40:57,422 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-12-14 20:40:58,379 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-14 20:40:58,409 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14 20:40:58,873 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-14 20:40:59,783 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-12-14 20:40:59,815 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:40:59,845 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9015 (http) with context path ''
+2023-12-14 20:40:59,878 INFO org.springframework.boot.StartupInfoLogger [main] Started DrugDisposeSystemApplication in 8.075 seconds (JVM running for 9.599)
+2023-12-14 20:41:01,190 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(10)-127.0.0.1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-14 20:41:01,191 INFO org.springframework.web.servlet.FrameworkServlet [RMI TCP Connection(10)-127.0.0.1] Initializing Servlet 'dispatcherServlet'
+2023-12-14 20:41:01,194 INFO org.springframework.web.servlet.FrameworkServlet [RMI TCP Connection(10)-127.0.0.1] Completed initialization in 3 ms
+2023-12-14 20:45:41,851 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(17)-127.0.0.1] Application shutdown requested.
+2023-12-14 20:45:41,870 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(17)-127.0.0.1] Pausing ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:45:41,871 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(17)-127.0.0.1] Stopping service [Tomcat]
+2023-12-14 20:45:41,873 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(17)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-12-14 20:45:41,878 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(17)-127.0.0.1] Stopping ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:45:41,881 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(17)-127.0.0.1] Destroying ProtocolHandler ["http-nio-9015"]
+2023-12-14 20:45:41,885 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(17)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-14 20:45:41,889 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(17)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-12-14 20:45:41,897 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(17)-127.0.0.1] HikariPool-1 - Shutdown completed.

@@ -6,47 +6,39 @@ package com.drug.dispose.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.drug.dispose.dto.UserDTO;
-import com.drug.dispose.entity.User;
+import com.drug.dispose.dto.User;
+import com.drug.dispose.entity.UserEntity;
 import com.drug.dispose.repository.UserRespository;
+import com.drug.dispose.util.UserHelper;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author Abhishek_Singh6
  *
  */
 @Service
+@Slf4j
 public class UserService {
 
 	@Autowired
 	private UserRespository userRespository;
 
-	//@Autowired
-	//private User user;
+	@Autowired
+	private UserHelper userHelper;
 
-	public boolean registerUser(UserDTO userDTO) {
-		
-		User user = new User();
-
+	public User saveUser(final User user) {
 		try {
-			System.out.println("UserService :: UserDTO = "+userDTO);
-			user.setName(userDTO.getName());
-			user.setAadharNo(userDTO.getAadharNo());
-			user.setCurrentLocation(userDTO.getCurrentLocation());
-			user.setDateOfBirth(userDTO.getDateOfBirth());
-			user.setEmail(userDTO.getEmail());
-			user.setSecondaryPhone(userDTO.getSecondaryPhone());
-			user.setPrimaryPhone(userDTO.getPrimaryPhone());
-			user.setGender(userDTO.getGender());
-			
-			System.out.println("UserService :: User = "+user);
-			
-			userRespository.save(user);
+			UserEntity entity = userHelper.mapUserDtoToEntity(user);
+			userRespository.save(entity);
 
-			return true;
-
+			log.error("User registered successfully");
+			return user;
 		} catch (Exception e) {
-			throw new RuntimeException("Unable to register user");
+			log.error("Unable to register user!");
+			return null;
 		}
 
 	}
+
 }

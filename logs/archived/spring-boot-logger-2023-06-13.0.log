@@ -1,0 +1,11 @@
+2023-06-13 01:57:18,824 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h6m45s171ms893µs700ns).
+2023-06-13 05:59:12,005 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h2m22s297ms476µs900ns).
+2023-06-13 09:24:05,005 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4892)-127.0.0.1] Application shutdown requested.
+2023-06-13 09:24:05,099 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(4892)-127.0.0.1] Pausing ProtocolHandler ["http-nio-9015"]
+2023-06-13 09:24:05,101 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(4892)-127.0.0.1] Stopping service [Tomcat]
+2023-06-13 09:24:05,110 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(4892)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-06-13 09:24:05,137 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(4892)-127.0.0.1] Stopping ProtocolHandler ["http-nio-9015"]
+2023-06-13 09:24:05,142 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(4892)-127.0.0.1] Destroying ProtocolHandler ["http-nio-9015"]
+2023-06-13 09:24:05,155 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4892)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-13 09:24:05,172 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4892)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-06-13 09:24:05,180 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4892)-127.0.0.1] HikariPool-1 - Shutdown completed.
