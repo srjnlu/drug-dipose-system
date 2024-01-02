@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,13 +32,14 @@ public class UserEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column(name = "name")
 	private String name;
 	
 	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "phone_id", referencedColumnName = "id")
 	private PhoneEntity phone;	
 	
-	@Column(nullable = false)
+	@Column(name = "email", nullable = false)
 	private String email;
 	
 	@Column(name = "date_of_birth", nullable = false)
@@ -47,6 +49,7 @@ public class UserEntity {
 	private Gender gender;
 	
 	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "address_id", referencedColumnName = "id")
 	private AddressEntity address;
 	
 	

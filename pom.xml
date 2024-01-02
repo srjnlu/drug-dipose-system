@@ -11,6 +11,7 @@
 	<groupId>com.drug.dispose</groupId>
 	<artifactId>Drug_Dispose_System</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Drug_Dispose_System</name>
 	<description>App to dispose unused/partially used drugs</description>
 	<properties>

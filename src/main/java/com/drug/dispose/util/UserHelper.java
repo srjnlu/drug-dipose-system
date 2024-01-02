@@ -16,7 +16,7 @@ public class UserHelper {
 	public UserEntity mapUserDtoToEntity(final User user) {
 
 		if (UserValidation.allMandatoryFieldsPresent(user)) {
-
+			log.info("User DTO before mapping : {}", user);
 			return UserEntity.builder().name(user.getName())
 					.phone(PhoneEntity.builder().primaryPhone(user.getPrimaryPhone())
 							.secondaryPhone(user.getSecondaryPhone()).build())

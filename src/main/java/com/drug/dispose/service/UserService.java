@@ -30,6 +30,7 @@ public class UserService {
 	public User saveUser(final User user) {
 		try {
 			UserEntity entity = userHelper.mapUserDtoToEntity(user);
+			log.info("User entity : {}", entity);
 			userRespository.save(entity);
 
 			log.error("User registered successfully");
