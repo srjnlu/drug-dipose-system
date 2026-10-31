@@ -1,0 +1,32 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: disposal-service
+  datasource:
+    url: ${DISPOSAL_DB_URL:jdbc:mysql://localhost:3306/goodcycle?createDatabaseIfNotExist=true}
+    username: ${DISPOSAL_DB_USER:goodcycle}
+    password: ${DISPOSAL_DB_PASSWORD:goodcycle-local}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+security:
+  jwt:
+    secret: ${JWT_SECRET:local-only-goodcycle-jwt-secret-change-before-deploy-000001}
+app:
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

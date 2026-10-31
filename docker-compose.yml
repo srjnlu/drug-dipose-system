@@ -1,0 +1,110 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: goodcycle
+      MYSQL_USER: goodcycle
+      MYSQL_PASSWORD: goodcycle-local
+      MYSQL_ROOT_PASSWORD: local-root-password
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  kafka:
+    image: apache/kafka:4.1.0
+    environment:
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: INTERNAL://:9092,EXTERNAL://:9094,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,EXTERNAL://localhost:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    ports:
+      - "127.0.0.1:9092:9094"
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD", "/opt/kafka/bin/kafka-topics.sh", "--bootstrap-server", "localhost:9092", "--list"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+
+  identity-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        MODULE: identity-service
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      IDENTITY_DB_URL: jdbc:mysql://mysql:3306/goodcycle?createDatabaseIfNotExist=true
+      IDENTITY_DB_USER: goodcycle
+      IDENTITY_DB_PASSWORD: goodcycle-local
+      JWT_SECRET: ${JWT_SECRET:-local-only-goodcycle-jwt-secret-change-before-deploy-000001}
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8081/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    ports:
+      - "127.0.0.1:8081:8081"
+
+  disposal-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        MODULE: disposal-service
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      DISPOSAL_DB_URL: jdbc:mysql://mysql:3306/goodcycle?createDatabaseIfNotExist=true
+      DISPOSAL_DB_USER: goodcycle
+      DISPOSAL_DB_PASSWORD: goodcycle-local
+      JWT_SECRET: ${JWT_SECRET:-local-only-goodcycle-jwt-secret-change-before-deploy-000001}
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      FRONTEND_ORIGIN: http://localhost:8080
+    depends_on:
+      mysql:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8082/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    ports:
+      - "127.0.0.1:8082:8082"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      identity-service:
+        condition: service_healthy
+      disposal-service:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8080:80"
+
+volumes:
+  mysql-data:
+  kafka-data:
